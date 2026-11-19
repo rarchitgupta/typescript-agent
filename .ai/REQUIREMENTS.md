@@ -4,7 +4,7 @@ Act as a senior software engineer helping me define clear, implementation-ready 
 
 ## Principles
 
-- Keep the entire requirements definition process within a **5-minute target**.
+- Aim for **5 minutes** to review the notes, clarify requirements, and write the draft PRD.
 - Prioritize a working end-to-end application over feature completeness.
 - Keep the scope realistic for a time-constrained coding exercise (typically 60–90 minutes).
 - Avoid overengineering, unnecessary abstractions, and production-scale requirements.
@@ -15,9 +15,10 @@ Act as a senior software engineer helping me define clear, implementation-ready 
 
 ### 1. Understand the Application
 
-- Review my project description, proposed tech stack, and any existing requirements.
+- Start by reading `docs/notes.txt`. Use it as the source of truth for requirements and base the PRD on it and my explicit clarifications.
+- If `docs/notes.txt` is missing or empty, ask me to provide the notes before drafting.
 - Identify the core user workflows, essential features, and major ambiguities.
-- Do not ask questions already answered by the project description.
+- Ask only about gaps or conflicts that the notes and my prior clarifications leave open.
 
 ### 2. Clarify Requirements
 
@@ -40,9 +41,9 @@ Act as a senior software engineer helping me define clear, implementation-ready 
 
 ### 4. Maintain the PRD
 
-- Create or update `docs/PRD.md` after each clarification round.
+- Write or update the draft `docs/PRD.md` after the clarification rounds.
 - Mark the document as **Draft** until I explicitly approve it.
-- Preserve previously agreed decisions when updating the document.
+- Preserve previously agreed decisions that are consistent with the current notes and my explicit clarifications. Ask about material conflicts and record any that remain under Open Questions.
 - Record unresolved decisions under Open Questions.
 - Never silently convert suggested defaults into confirmed requirements.
 - Update only affected sections rather than unnecessarily rewriting the entire document.
@@ -83,6 +84,7 @@ Build toward the following sections:
 7. **Acceptance Criteria**
    - Observable conditions that demonstrate each must-have feature works
    - Core end-to-end scenarios
+   - If several slices need tracking, use a short checklist with one observable user outcome per slice, ordered by priority.
 
 8. **Open Questions**
    - Unresolved decisions, if any
@@ -109,18 +111,17 @@ Build toward the following sections:
 
 ## Time Budget
 
-Target total duration: **5 minutes**.
+Use the **5-minute target** to keep the workflow focused. Allow more time when a decision needs further thought or user input.
 
 | Phase                                           | Target Duration |
 | ----------------------------------------------- | --------------- |
 | Understand application and identify ambiguities | 30 seconds      |
 | Clarification (maximum 2 rounds)                | 2 minutes       |
-| Generate complete PRD                           | 1.5 minutes     |
-| Final review and approval                       | 1 minute        |
+| Generate and review the draft PRD               | 2 minutes       |
 
-The time budget is a target rather than a guaranteed deadline. Minimize unnecessary interaction and prioritize producing a usable PRD quickly.
+Keep unresolved decisions under Open Questions until the user confirms them. Label any proposed defaults and leave the PRD in Draft pending explicit approval.
 
-If the project description is already sufficiently detailed, proceed directly to drafting the PRD.
+If the notes are already sufficiently detailed, proceed directly to drafting the PRD.
 
 ## Boundaries
 
@@ -131,5 +132,3 @@ If the project description is already sufficiently detailed, proceed directly to
 - Do not perform unnecessary research or explore unrelated technologies.
 - Focus exclusively on defining the application's requirements.
 - Wait for explicit approval before transitioning to implementation planning.
-
-**Primary objective:** Produce a concise, unambiguous, implementation-ready MVP PRD in approximately 5 minutes, with minimal clarification overhead.

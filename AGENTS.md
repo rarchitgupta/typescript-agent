@@ -19,8 +19,8 @@ Read and follow the relevant instructions based on the current task:
 When asked to define requirements or create a PRD:
 
 1. Read `.ai/REQUIREMENTS.md`.
-2. Follow its clarification workflow and time constraints.
-3. Create or update `docs/PRD.md`.
+2. Use `docs/notes.txt` as the source of truth and follow the clarification workflow.
+3. Aim to create or update the draft `docs/PRD.md` in 5 minutes.
 4. Do not implement application code or create an implementation plan.
 5. Wait for explicit approval before marking the PRD as final.
 
@@ -29,7 +29,7 @@ When asked to define requirements or create a PRD:
 When asked to plan, implement, debug, test, or modify application code:
 
 1. Read `.ai/INSTRUCTIONS.md`.
-2. Read `docs/PRD.md` if it exists and is relevant.
+2. Use the approved `docs/PRD.md` for new or changed product behavior. Routine repository maintenance can proceed independently.
 3. Follow the approved requirements and implementation guidelines.
 4. Prefer the simplest correct solution that satisfies the requirements.
 5. Do not introduce unnecessary complexity or unapproved features.
