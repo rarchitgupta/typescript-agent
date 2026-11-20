@@ -1,0 +1,31 @@
+Chat interface, where user submits a URL as an input, and the
+corresponding message is a rich preview of that URL, as happens in messaging applications
+
+Rich preview contains details from the website's metadata and opengraph tags
+Include a title, description and image (if available), the hostname and also a favicon if available
+
+No need to build a full web crawler, fetching and parsing initial HTML response works
+
+Input should be non blocking, users can continue submitting URLs while a preview for a previous one is loading
+They should be in order of submission, even if a later submitted URL finishes loading first
+
+Failures should be independent, and deleting a message request should completely
+remove and abort it, so no extra network activity is made and no result is rendered for it
+
+If a user re-submits a URL, reuse cached metadata instead of fetching again. If same
+URL is submitted multiple times and request has not been completed yet, shared request to avoid
+extra network requests. And message deletion should not mean immediate cached
+invalidation, same URL submitted again later should be able to re-use the result
+
+5 minutes of freshness, so assume that as our TTL. Don't cache failures at all
+
+In-memory store is fine, no need for persistence right now
+
+URLs should be validated, https only, and www converted to https. Any other formats apart
+from these two are not accepted. Reject malinformed URLs with clear message
+
+Fallback fields for each piece of missing metadata. Hostname as
+fallback title, and if website metadata cannot be fetched, display "Preview unavailable"
+but in either case, clicking on rich preview should allow visiting URL
+
+Also consider request safety, rejecting internal/private destinations by any means
