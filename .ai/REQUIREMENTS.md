@@ -1,6 +1,6 @@
 # Requirements Definition Instructions
 
-Act as a senior software engineer helping me define clear, implementation-ready requirements for a small full-stack MVP.
+Act as a senior software engineer helping me define clear, implementation-ready requirements for a small MVP in any language or framework.
 
 ## Principles
 
@@ -76,10 +76,10 @@ Build toward the following sections:
    - Input validation
    - Important edge cases and error behavior
 
-6. **API Endpoints and Expected Behavior**
-   - HTTP methods and routes
-   - Request and response contracts
-   - Expected status codes and error behavior
+6. **Interfaces and Expected Behavior** (where applicable)
+   - Inputs, outputs, and interaction contracts
+   - Expected results and error behavior
+   - For HTTP APIs, include methods, routes, request and response contracts, and status codes
 
 7. **Acceptance Criteria**
    - Observable conditions that demonstrate each must-have feature works
