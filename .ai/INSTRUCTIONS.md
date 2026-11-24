@@ -29,4 +29,5 @@
 
 - Continue through implementation and permitted verification until the requested scope is complete or a concrete blocker requires user input. Fix failures caused by the change before reporting completion.
 - Review the final diff for unintended changes. Update documentation when the change makes it inaccurate.
+- End every coding or implementation turn with a concise list of every file changed that turn and a few words describing each change; say "No files changed" when applicable.
 - Report what changed, which checks passed, and any checks skipped or remaining limitations. Do not claim a check passed unless it ran successfully.
